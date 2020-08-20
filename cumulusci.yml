@@ -1,0 +1,24 @@
+minimum_cumulusci_version: '3.16.1.dev1'
+project:
+    name: ExampleLibrary
+    package:
+        name: ExampleLibrary
+        api_version: '49.0'
+    git:
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/ExampleLibrary/tests
+            options:
+                outputdir: robot/ExampleLibrary/results
+
+    robot_testdoc:
+        options:
+            path: robot/ExampleLibrary/tests
+            output: robot/ExampleLibrary/doc/ExampleLibrary_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
